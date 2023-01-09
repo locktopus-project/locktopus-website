@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Questions And Answers
 
 ## Does the server support TLS?
@@ -11,6 +15,10 @@ No. The service operates with in-memory data. Stopping an instance aborts all co
 ## Can I just check whether a lock is free without acquiring it?
 
 There is no out-of-the-box solution for that, though there is no practical need for implementing that. But if you still need a reason to check whether a lock is free or not, you can just lock it and then release it. If the lock has been acquired immediately, that means it was free.
+
+## What is the Playground?
+
+The [Playground](https://playground.locktopus.xyz/) is a web application for testing locks. It requires connecting to an instance of Locktopus.
 
 ## Can I limit the number of processes acquiring shared access to a resource?
 

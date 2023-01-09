@@ -1,4 +1,8 @@
-# The Concept
+---
+sidebar_position: 2
+---
+
+# Concept
 
 This document describes the concept, definitions and workflow of Locktopus and in a user-friendly manner.
 
@@ -13,27 +17,27 @@ A lock resource is an abstraction of what should be locked. It is represented by
 Notes:
 
 - Locktopus implements tree locking: parent paths respect child path and vice-versa. E.g. locking `["A", "B"]` for write coflicts with either `["A", "B", "C"]` and `["A"]`.
-- **range locks are not implemented**, e.g. using asterisk for locking `*@fizz.buzz` is not possible. The **path segment is threated as a specific string token**. However, range locks might be implemented on the application level. In this specific case, we can _group_ (logically) users by domain and use this form of path: `["user", "department/IT", "domain/fizz.buzz", "foo.bar"]` for locking a specific user, and this path `["user", "department/IT", "domain/fizz.buzz"]` for locking the whole domain `fizz.buzz`. But then be sure to use only this form, as using it together with the former one will end up in data races.
+- **range locks are not implemented**, e.g. using asterisk for locking `*@fizz.buzz` is not possible. The **path segment is threated as a specific string token**. However, range locks might be implemented on the application level. In this specific case, we can logically group users by domain and use this form of path: `["user", "department/IT", "domain/fizz.buzz", "foo.bar"]` for locking a specific user, and this path `["user", "department/IT", "domain/fizz.buzz"]` for locking the whole domain `fizz.buzz`. But then be sure to use only this form, as using it together with the former one will end up in data races.
 - It does not matter whether _plural_ on _singular_ form of resources is used (`user` vs `users`). It does not affect the performance either. But be sure to have the same form across your applicaiton.
 - Trying to lock an empty set of resources is forbidden.
 - Locking redundant resources (shadowed by other resources within the lock) is allowed. For example, if we lock all users for write and a specific one for read (or write):
 
   > WRITE: `["user"]` _<-- to lock all users for write_
   >
-  > READ: ["user", "department/IT", "foo.bar@fizz.buzz"]` _<-- to lock a specific user for read. Actually, we dont need this, since we already lock all users for write_
+  > READ: `["user", "department/IT", "foo.bar@fizz.buzz"]` _<-- to lock a specific user for read. Actually, we dont need this, since we already lock all users for write_
 
   But doing that vice-versa pretty has sence and is not a redundant locking:
 
   > READ: `["user"]` _<-- to lock all users for read_
   >
-  > WRITE: ["user", "department/IT", "foo.bar@fizz.buzz"]` _<-- to lock a specific user for write. This is shadowed by the first resource_
+  > WRITE: `["user", "department/IT", "foo.bar@fizz.buzz"]` _<-- to lock a specific user for write. This is shadowed by the first resource_
 
 ## Lock Type
 
 Each resource in the lock should be specified with the lock type: **write** or **read**. Conceptually, they repeat Go's [RWMutex](https://pkg.go.dev/sync#RWMutex).
 
-- **WRITE**: exclusive access to a resource. Having acquired the lock with with the resource, other clients cannot acquire their locks with the resource until it is released by the locker. And vice-versa, the resource cannot be acquired for write if it is not released by other clients yet.
-- **READ**: shared access to a resource. Can be acquired when there are no other locks to the resource except read ones.
+- **WRITE**: exclusive access to a resource. When the lock is acquired, other clients cannot acquire their locks to the same resource until it is released by the locker. And vice-versa, the resource cannot be acquired for write if it is acquired by other clients yet.
+- **READ**: shared access to a resource. Can be acquired when there are no write locks to the resource.
 
 ## Namespace
 

@@ -14,8 +14,8 @@ Parameters:
 - **HOST** (required): IP address or domain name
 - **PORT** (required): port number
 - query parameters:
-  - **namespace** (required): the [namespace](CONCEPT.md#namespace)
-  - **abandon-timeout-ms** (optional): the [abandon timeout](CONCEPT.md#abandon-timeout) in milliseconds
+  - **namespace** (required): the [namespace](../concept.md#namespace)
+  - **abandon-timeout-ms** (optional): the [abandon timeout](../concept.md#abandon-timeout) in milliseconds
 
 ## Communication
 
@@ -31,8 +31,8 @@ To make a `lock`, send a JSON object with the following structure:
 
 ```typescript
 type Lock = {
-  action: "lock";
-  resources: { type: "read" | "write"; path: string }[];
+  action: 'lock';
+  resources: { type: 'read' | 'write'; path: string }[];
 };
 ```
 
@@ -62,7 +62,7 @@ To perform a release, send a JSON object with the following structure:
 
 ```typescript
 type Release = {
-  action: "release";
+  action: 'release';
 };
 ```
 
@@ -81,8 +81,8 @@ Each response from the server has the following structure:
 ```typescript
 type Response = {
   id: number; // id of lock withing workspace
-  action: "lock"; // action this respondes belongs to
-  state: "acquired" | "enqueued" | "ready"; // new state of client
+  action: 'lock'; // action this respondes belongs to
+  state: 'acquired' | 'enqueued' | 'ready'; // new state of client
 };
 ```
 

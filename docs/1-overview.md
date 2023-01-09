@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Locktopus
+# Overview
 
 ## What problem does it solve?
 
