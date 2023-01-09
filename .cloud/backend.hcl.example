@@ -1,0 +1,5 @@
+# use with terraform init -backend-config backend.hcl
+
+hostname     = "app.terraform.io"
+organization = "myorg"
+workspaces { name = "my-workspace" }
