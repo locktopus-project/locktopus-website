@@ -57,9 +57,14 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'overview',
             position: 'left',
             label: 'Docs',
+          },
+          {
+            href: 'https://playground.locktopus.xyz',
+            label: 'Playground',
+            position: 'right',
           },
           {
             href: 'https://github.com/locktopus-project',
