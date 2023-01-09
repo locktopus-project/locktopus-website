@@ -4,8 +4,6 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 
-import styles from './index.module.css';
-
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -24,7 +22,6 @@ export default function Home(): JSX.Element {
           height: '100%',
         }}
       >
-        <h1 className="hero__title">{siteConfig.title}</h1>
         <div
           style={{
             width: '100%',
