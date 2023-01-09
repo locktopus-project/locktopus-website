@@ -3,7 +3,7 @@ name: Deploy React App To AWS
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -24,4 +24,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           DISTRIBUTION_ID: ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: "build"
+          SOURCE_DIR: 'build'
