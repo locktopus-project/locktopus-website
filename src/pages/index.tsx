@@ -43,7 +43,7 @@ export default function Home(): JSX.Element {
 
         <h1>Get rid of race conditions in your application</h1>
         <h2>
-          Let Locktopus to manage your locks efficiently. Refer to{' '}
+          Let Locktopus manage your locks efficiently. Refer to{' '}
           <a href="/docs/overview">Docs</a> to get started
         </h2>
       </div>
