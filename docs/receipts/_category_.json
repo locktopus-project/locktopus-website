@@ -1,8 +1,8 @@
 {
-  "label": "API",
+  "label": "Recipes",
   "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "API docs"
+    "description": "Recipes"
   }
 }

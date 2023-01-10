@@ -17,7 +17,7 @@ In a distributed system there _always_ is a need to coordinate access to resourc
 - **Live communication** (WebSocket) ensures a client is notified of his lock's state as soon as it is changed
 - Near-**constant** lock/unlock **time**. There are no explicit queues under the hood, just goroutines, hashmaps and mutexes
 
-## Locktopus vs Redlock
+## Comparison to Redlock | Cluster
 
 One might ask why not use [Redlock](https://redis.io/docs/manual/patterns/distributed-locks/) instead. Redlock is a good tool for distributed locking, designed for running in a cluster. It is quite supported by the community and has a lot of client libraries. But there are limitations to it, some of which are:
 
@@ -29,6 +29,4 @@ One might ask why not use [Redlock](https://redis.io/docs/manual/patterns/distri
 
 The brief considerations about cluster mode are given in the section below.
 
-## Cluster
-
-Since the service is about coordinating access to resources between other services, one might consider running it in a cluster, similar to Redlock, to avoid having a single point of failure. Here is not an in-built solution for that, but it can be implemented manually. The only thing one should remember to avoid deadlocks is to perform locking (no matter whether enqueue or acquire) on different nodes in the same order by all clients. This way all the liveness and safety properties of Redlocks are preserved and additionally, the locks will be acquired in FIFO order. The drawback here, in comparison to Redlock, is that in the optimistic case (no lock conflicts) Redlock will be faster due to parallel locking, though not providing FIFO lock order.
+Locktopus might also be considered to run in a cluster to avoid having a single point of failure (similar to Redlock). Here is not an in-built solution for that, but it can be implemented manually. The only thing one should remember to avoid deadlocks is to perform locking (no matter whether enqueue or acquire) on different nodes in the same order by all clients. This way all the liveness and safety properties of Redlocks are preserved and additionally, the locks will be acquired in FIFO order. The drawback here, in comparison to Redlock, is that in the optimistic case (no lock conflicts) Redlock will be faster due to parallel locking, though not providing FIFO lock order.

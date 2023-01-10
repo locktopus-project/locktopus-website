@@ -1,4 +1,8 @@
-# General
+---
+title: Common Endpoints
+---
+
+# Common Endpoints
 
 Locktopus runs an HTTP server. Currently, only one API version is supported.
 

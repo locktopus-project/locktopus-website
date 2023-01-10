@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Locktopus',
-  tagline: 'Locks became flexible',
+  tagline: 'Flexible and efficient locks',
   url: 'https://locktopus.xyz',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -48,6 +48,13 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      announcementBar: {
+        id: 'support_ukraine',
+        backgroundColor: 'yellow',
+        isCloseable: false,
+        textColor: "black",
+        content: 'This project is open-source and free, unlike the Freedom. Today, Ukrainian soldiers pay their lives to fight russian terrorism. Every $ of <a target="_blank" href="https://savelife.in.ua/en/donate-en/#donate-army-card-once">help</a> is greatly appreciated'
+      },
       navbar: {
         title: 'Locktopus',
         logo: {
@@ -75,35 +82,33 @@ const config = {
       },
       footer: {
         style: 'dark',
-        // links: [
-        //   {
-        //     title: 'Docs',
-        //     items: [
-        //       {
-        //         label: 'Introduction',
-        //         to: '/docs/intro',
-        //       },
-        //     ],
-        //   },
-        //   {
-        //     title: 'Community',
-        //     items: [
-        //       {
-        //         label: 'Stack Overflow',
-        //         href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-        //       },
-        //       {
-        //         label: 'Discord',
-        //         href: 'https://discordapp.com/invite/docusaurus',
-        //       },
-        //       {
-        //         label: 'Twitter',
-        //         href: 'https://twitter.com/docusaurus',
-        //       },
-        //     ],
-        //   },
-        // ],
-        copyright: `Copyright © ${new Date().getFullYear()} Oleksii Shkut. Built with Docusaurus.`,
+        links: [
+          {
+            title: 'Tributes',
+            items: [
+              {
+                href: 'https://docusaurus.io',
+                label: 'Docusaurus'
+              },
+              {
+                href: 'https://savelife.in.ua',
+                label: 'savelife.in.ua'
+              },
+            ],
+          },
+          {
+            title: "Feedback",
+            items: [
+              {
+                html: 'Found a typo? <a target="_blank" href="https://github.com/locktopus-project/locktopus-website">Edit and propose</a>'
+              },
+              {
+                html: 'Provide direct feedback to <a target="_blank" href="mailto:locktopus.project@gmail.com">locktopus.project@gmail.com</a>'
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} Oleksii Shkut. Published under MIT licence. Build with Docusaurus`,
       },
       prism: {
         theme: lightCodeTheme,

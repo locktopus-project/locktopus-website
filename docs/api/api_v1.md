@@ -1,4 +1,8 @@
-# API V1 (WebSocket)
+---
+title: V1
+---
+
+# API V1
 
 ## Connection
 
