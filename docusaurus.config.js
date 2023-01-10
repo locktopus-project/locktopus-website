@@ -51,9 +51,9 @@ const config = {
       announcementBar: {
         id: 'support_ukraine',
         backgroundColor: 'yellow',
-        isCloseable: false,
+        isCloseable: true,
         textColor: "black",
-        content: 'This project is open-source and free, unlike the Freedom. Today, Ukrainian soldiers pay their lives to fight russian terrorism. Every $ of <a target="_blank" href="https://savelife.in.ua/en/donate-en/#donate-army-card-once">help</a> is greatly appreciated'
+        content: 'This project is open-source and free, unlike Freedom. Today, Ukrainian soldiers pay their lives to fight russian terrorism. Every $ of <a target="_blank" href="https://savelife.in.ua/en/donate-en/#donate-army-card-once">help</a> is greatly appreciated'
       },
       navbar: {
         title: 'Locktopus',

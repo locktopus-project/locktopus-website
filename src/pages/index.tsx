@@ -12,7 +12,6 @@ export default function Home(): JSX.Element {
       description="Locktopus - a service for managing locks"
     >
       <div
-        id="1"
         style={{
           display: 'flex',
           flexDirection: 'column',
@@ -22,11 +21,12 @@ export default function Home(): JSX.Element {
           height: '100%',
         }}
       >
+        <h1 className="hero__title">{siteConfig.title}</h1>
+
         <div
           style={{
             width: '100%',
             maxHeight: '50vh',
-            padding: '100px',
             overflow: 'hidden',
           }}
         >
@@ -40,6 +40,12 @@ export default function Home(): JSX.Element {
             }}
           />
         </div>
+
+        <h1>Get rid of race conditions in your application</h1>
+        <h2>
+          Let Locktopus to manage your locks efficiently. Refer to{' '}
+          <a href="/docs/overview">Docs</a> to get started
+        </h2>
       </div>
     </Layout>
   );
