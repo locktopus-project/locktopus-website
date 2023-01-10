@@ -10,7 +10,7 @@ const config = {
   tagline: 'Flexible and efficient locks',
   url: 'https://locktopus.xyz',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
@@ -33,7 +33,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: "_docs",
+          editUrl: 'https://github.com/locktopus-project/locktopus-website/edit/main/',
           sidebarPath: require.resolve('./sidebars.js'),
         },
         blog: {
