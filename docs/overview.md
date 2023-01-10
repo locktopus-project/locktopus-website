@@ -27,6 +27,4 @@ One might ask why not use [Redlock](https://redis.io/docs/manual/patterns/distri
 - no FIFO lock order
 - livelocks are possible
 
-The brief considerations about cluster mode are given in the section below.
-
 Locktopus might also be considered to run in a cluster to avoid having a single point of failure (similar to Redlock). Here is not an in-built solution for that, but it can be implemented manually. The only thing one should remember to avoid deadlocks is to perform locking (no matter whether enqueue or acquire) on different nodes in the same order by all clients. This way all the liveness and safety properties of Redlocks are preserved and additionally, the locks will be acquired in FIFO order. The drawback here, in comparison to Redlock, is that in the optimistic case (no lock conflicts) Redlock will be faster due to parallel locking, though not providing FIFO lock order.
