@@ -85,20 +85,28 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Tributes',
+            title: 'Project links',
             items: [
               {
-                href: 'https://docusaurus.io',
-                label: 'Docusaurus'
+                href: 'https://pkg.go.dev/github.com/locktopus-project/locktopus',
+                label: 'pkg.go.dev'
               },
               {
-                href: 'https://savelife.in.ua',
-                label: 'savelife.in.ua'
+                href: 'https://github.com/locktopus-project',
+                label: 'Github'
               },
-            ],
+              {
+                href: 'https://playground.locktopus.xyz',
+                label: 'Locktopus Playground'
+              },
+              {
+                href: 'https://hub.docker.com/repository/docker/locktopus/locktopus/general',
+                label: 'Dockerhub'
+              }
+            ]
           },
           {
-            title: "Feedback",
+            title: "Contacts",
             items: [
               {
                 html: 'Found a typo? <a target="_blank" href="https://github.com/locktopus-project/locktopus-website">Edit and propose</a>'
@@ -109,7 +117,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Oleksii Shkut. Published under MIT licence. Build with Docusaurus`,
+        copyright: `Copyright © ${new Date().getFullYear()} Oleksii Shkut (<a href="https://github.com/locktopus-project/locktopus/blob/master/LICENCE" target="_blank">Licence</a>). Built with <a href="https://docusaurus.io" target="_blank">Docusaurus</a>`,
       },
       prism: {
         theme: lightCodeTheme,
