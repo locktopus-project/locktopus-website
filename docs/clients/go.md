@@ -1,5 +1,7 @@
 # Go
 
+The client's API can be found at [pkg.go.dev](https://pkg.go.dev/github.com/locktopus-project/locktopus/pkg/client/v1)
+
 ## Installation
 
 ```
