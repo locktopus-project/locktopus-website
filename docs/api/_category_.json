@@ -2,7 +2,6 @@
   "label": "API",
   "position": 4,
   "link": {
-    "type": "generated-index",
-    "description": "API docs"
+    "type": "generated-index"
   }
 }
