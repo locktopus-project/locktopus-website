@@ -6,20 +6,27 @@ sidebar_position: 8
 
 ## Does the server support TLS?
 
-No (at least, currently). The service is supposed to be used in in-house systems, not for public use. However, if you still need TLS/SSL, consider using a proxy server for that.
+No. The service is supposed to be used in private environments. However, if you need TLS/SSL, consider using a proxy server for that.
+
+## Does it have authentication?
+
+No. (See the question above)
 
 ## Is the service persistent?
 
-No. The service operates with in-memory data. Stopping an instance aborts all connections. Currently, no restore mechanism is implemented for connections as it will rather complicate the system which is designed to be rather simple.
+No. The service operates with in-memory data. Stopping an instance aborts all connections.
+Currently, no restore mechanism is implemented for connections as it will rather complicate the system which is designed to be rather simple.
 
 ## Can I just check whether a lock is free without acquiring it?
 
-There is no out-of-the-box solution for that, though there is no practical need for implementing that. But if you still have a reason to check whether a lock is free or not, you can just lock it and then release it. If the lock has been acquired immediately, that means it was free. This adds a tiny memory overhead to the server so is not recommended for regular programmatic use.
+Checking resources' states without interacting with them is not implemented. If you still have a reason to check whether a lock is free or not, you can just lock it and then release it. If the lock has been acquired immediately, that means it was free at the moment of checking. This adds a tiny memory overhead to the server so it is not recommended for frequent programmatic use.
 
 ---
 
-# Have some questions? Need any help?
+### Have some questions? Need any help?
 
-Feel free to open issues or contact the maintainer directly.
+Feel free to use any of these options:
 
-locktopus.project@gmail.com
+- open an [issue](https://github.com/locktopus-project/locktopus-website/issues)
+- contact the maintainer directly: **locktopus.project@gmail.com**
+- edit this page
