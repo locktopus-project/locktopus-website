@@ -12,6 +12,6 @@ Run Locktopus server instance with Docker:
 docker run -p 9009:9009 locktopus/locktopus:latest
 ```
 
-## Binary
+## From Source
 
 Refer to [Github Repo](https://github.com/locktopus-project/locktopus) to get the steps for manual installation.
