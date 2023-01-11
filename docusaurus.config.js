@@ -54,7 +54,7 @@ const config = {
         backgroundColor: 'yellow',
         isCloseable: true,
         textColor: "black",
-        content: 'This project is open-source and free, unlike Freedom. Today, Ukrainian soldiers pay their lives to fight russian terrorism. Every $ of <a target="_blank" href="https://savelife.in.ua/en/donate-en/#donate-army-card-once">help</a> is greatly appreciated'
+        content: 'This open-source project is available for free. But peace and freedom are not. Today, Ukrainian soldiers are paying their lives to protect us against russian terrorism. Every single $ of your <a target="_blank" href="https://savelife.in.ua/en/donate-en/#donate-army-card-once">HELP</a> is greatly appreciated'
       },
       navbar: {
         title: 'Locktopus',
