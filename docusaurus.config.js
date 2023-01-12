@@ -100,7 +100,7 @@ const config = {
                 label: 'Locktopus Playground'
               },
               {
-                href: 'https://hub.docker.com/repository/docker/locktopus/locktopus/general',
+                href: 'https://hub.docker.com/r/locktopus/locktopus',
                 label: 'Dockerhub'
               }
             ]
