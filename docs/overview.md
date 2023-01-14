@@ -10,7 +10,7 @@ Locktopus is a service for managing locks written in Go.
 
 ## What problem does it solve?
 
-In a distributed system there _always_ is a need to coordinate access to resources. Without such, multiple processes may access the same resources at the same time (data race). This may lead to deadlocks, lost updates and consistency violations. **Locktopus** is a service that addresses this problem by serializing clients' access to conflicting resources. It receives a set of resources that need to be accessed from a client and locks them as soon as nobody is using them.
+In a distributed system there _always_ is a need to coordinate access to resources. Without such, multiple processes may access the same resources at the same time (data race). This may lead to deadlocks, lost updates and consistency violations. **Locktopus** is a service that addresses this problem by serializing clients' access to resources.
 
 ## Features
 
