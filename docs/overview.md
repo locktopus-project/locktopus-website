@@ -23,12 +23,12 @@ In a distributed system there _always_ is a need to coordinate access to resourc
 
 ## How to work with that?
 
-Setting up Locktopus and working with it is simple. The basic idea:
+Setting up Locktopus and working with it is simple:
 
 Run the [Server](installation.md) - it will receive requests from clients and lock resources for them.
-As a client, all you need is to set up your connection to the server (actually, just provide the connection parameters).
 
-Then, every time you want to work with shared resources safely, you need to:
+As a client, you need to set up a connection to the server (actually, just provide the connection parameters).
+Then, every time you want to work with shared resources, your steps are as follows:
 
 1. Specify what resources you need to access
 2. Lock them (they might be acquired immediately or enqueued. In the latter case, you will need to wait until they are acquired)
