@@ -31,6 +31,6 @@ As a client, you need to set up a connection to the server (actually, just provi
 Then, every time you want to work with shared resources, your steps are as follows:
 
 1. Specify what resources you need to access
-2. Lock them (they might be acquired immediately or enqueued. In the latter case, you will need to wait until they are acquired)
+2. Lock them (they may be acquired immediately or enqueued. In the latter case, you will need to wait until they are acquired)
 3. Do what you need with the resources
 4. Release (unlock) them
