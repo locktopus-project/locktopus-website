@@ -6,7 +6,7 @@ sidebar_position: 8
 
 ## Why can't I just use Redis for locking?
 
-Redis is a great tool that runs side-by-side with almost every modern web application. If you already have Redis in your stack, you can use it for locking without the need to add another software. But if locks are an important part of your application, consider using Locktopus. The main features that determine it from Redis are described in the [overview](overview.md#features).
+Redis is a great tool that runs side-by-side with almost every modern web application. If you already have Redis in your stack, you can use it for locking without the need to add another software. But if locks are an important part of your application, consider using Locktopus. The main features that distinguish it from Redis are described in the [overview](overview.md#features).
 
 ## Is distributed locking available?
 
