@@ -10,7 +10,7 @@ Redis is a great tool that runs side-by-side with almost every modern web applic
 
 ## Is distributed locking available?
 
-Distributed locking can be implemented manually with Locktopus to avoid having a single point of failure. The only thing one should remember to avoid deadlocks is to perform locking (no matter whether enqueue or acquire) on different nodes in the same order by all clients. To completely acquire the lock it needs to acquire it on N/2+1 nodes. This way locks are guaranteed to be acquired in FIFO order.
+Distributed locking can be implemented manually to avoid having a single point of failure. The only thing one should remember to avoid deadlocks is to perform locking (no matter whether enqueue or acquire) on different nodes in the same order by all clients. To completely acquire the lock it needs to acquire it on N/2+1 nodes. This way locks are guaranteed to be acquired in FIFO order.
 
 ### How does it compare to Redlock?
 
@@ -18,18 +18,18 @@ Distributed locking can be implemented manually with Locktopus to avoid having a
 
 - possible violation of correctness (see [Martin Kleppmann's blog](https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html))
 - no option to lock multiple resources at once
-- no read/write locks, just write locks
+- no read/write locks, only write locks
 - time overhead on retries
 
-With Locktopus, the liveness and safety properties of Redlocks are preserved.
+With Locktopus, the liveness and safety properties of the Redlocks algotithm are preserved.
 
 ## Does the server support TLS?
 
-No. The service is supposed to be used in private environments. However, if you need TLS/SSL, consider using a proxy server for that.
+No. The service is supposed to be used in private environments. However, if you need TLS/SSL, consider adding a proxy server for that.
 
 ## Does it have authentication?
 
-No. (See the question above)
+No.
 
 ## Is the service persistent?
 
