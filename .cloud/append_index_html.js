@@ -1,6 +1,11 @@
 function handler(event, context, callback) {
-    if (event.request.uri.endsWith('/')) {
-        event.request.uri = event.request.uri + 'index.html';
+    var request = event.request
+    if (request.method === "GET") {
+        var splitted = request.uri.split('/')
+        var lastSegment = splitted[splitted.length - 1]
+        if (!lastSegment.includes('.')) {
+            request.uri = request.uri + (request.uri.endsWith('/') ? '' : '/') + 'index.html';
+        }
     }
-    return event.request
+    return request
 };
