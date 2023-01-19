@@ -53,6 +53,11 @@ resource "aws_cloudfront_distribution" "cdn" {
         forward = "none"
       }
     }
+
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.append_index_html.arn
+    }
   }
 
   default_root_object = "index.html"
@@ -92,3 +97,13 @@ data "aws_iam_policy_document" "cloudfront_invalidation" {
     ]
   }
 }
+
+# Edge functions for appending index.html to folder paths
+resource "aws_cloudfront_function" "append_index_html" {
+  name    = "append_index_html"
+  runtime = "cloudfront-js-1.0"
+
+  code = file("${path.module}/append_index_html.js")
+}
+
+
