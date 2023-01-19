@@ -17,7 +17,7 @@ resource "aws_route53_record" "main_certificate_validation_cname" {
 resource "aws_route53_record" "dns_cdn_record" {
   zone_id = data.aws_route53_zone.domain_zone.zone_id
   type    = "A"
-  name    = ""
+  name    = var.SUBDOMAIN
 
   alias {
     name                   = aws_cloudfront_distribution.cdn.domain_name

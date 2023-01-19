@@ -16,6 +16,10 @@ variable "AWS_REGION" {
 }
 
 variable "DOMAIN_NAME" {
+  type    = string
+}
+
+variable "SUBDOMAIN" {
   type = string
 }
 
@@ -29,5 +33,5 @@ variable "GH_TOKEN" {
 }
 
 variable "GH_REPO_NAME" {
-  type      = string
+  type = string
 }
