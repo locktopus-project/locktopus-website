@@ -52,6 +52,10 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'dark',
+        respectPrefersColorScheme: true
+      },
       announcementBar: {
         id: 'support_ukraine',
         backgroundColor: 'yellow',
