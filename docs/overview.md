@@ -8,7 +8,10 @@ Locktopus is a piece of software for managing locks written in Go.
 
 ## What problem does it solve?
 
-Quite often in a backend application, multiple processes access the same data at the same time. This is called a race condition, and it is just a natural state of the things in the World. But in software, they may lead to deadlocks, lost updates, consistency violations, etc. **Locktopus** addresses this problem by serializing access to resources.
+Quite often in a backend application, multiple processes access the same data at the same time.
+This is called a race condition, and it is just a natural state of things in the World. 
+But in software, they may lead to deadlocks, lost updates, consistency violations, etc. 
+**Locktopus** addresses this problem by serializing access to resources.
 
 ## Features
 
