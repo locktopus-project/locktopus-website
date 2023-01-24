@@ -14,6 +14,7 @@ Unfortunately, currently, there is no out-of-the-box solution for that, so it re
 But before doing that, please consider the conceptual drawback of using lock _leases_: **having acquired a lock does not guarantee exclusive access to the resource.**. A good description of the issue can be found in the same [article](https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html) by Martin Kleppmann (see _Protecting a resource with a lock_).
 
 The overall steps are as follows:
+
 0. Determine the order of nodes to iterate over. This order must be the same for all clients.
 1. Enqueue the lock at least on N/2+1 nodes one-by-one for the defined set of resources.
 2. Acquire the enqueued locks (in parallel).
