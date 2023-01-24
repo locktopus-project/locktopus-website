@@ -67,4 +67,6 @@ Notes:
 
 - If connection has been closed (for any reason), there is no way to restore the lock but to reconnect and lock the resources again.
 
-- <a name="abandon-timeout"></a> Abandon Timeout. If connection has been closed without releasing the lock, the server will release it after the timeout (`abandon lock timeout`). The timeout value can be specified when making a connection, otherwise the default value for the server is used. The value should be as big as it is needed for stopping working with the resources locked plus the delay to determine the connection is closed on the client side.
+### Abandon Timeout
+
+If connection has been closed without releasing the lock, the server will release it after the timeout (`abandon lock timeout`). The timeout value can be specified when making a connection, otherwise the default value for the server is used. The value should be as big as it is needed for stopping working with the resources locked plus the delay to determine the connection is closed on the client side.
