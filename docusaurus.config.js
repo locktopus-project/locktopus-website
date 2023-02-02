@@ -92,7 +92,7 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Project links',
+            title: 'Links',
             items: [
               {
                 href: 'https://pkg.go.dev/github.com/locktopus-project/locktopus',
