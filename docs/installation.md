@@ -18,7 +18,7 @@ Refer to [Github Repo](https://github.com/locktopus-project/locktopus) to get th
 
 ## Library
 
-Go developers can use the [Library](https://pkg.go.dev/github.com/locktopus-project/locktopus@v1.0.0/pkg/multilocker) for their needs.
+Go developers can use the [Library](https://pkg.go.dev/github.com/locktopus-project/locktopus/pkg/multilocker) for their needs.
 
 ```
 go get github.com/locktopus-project/locktopus/pkg/multilocker@v1.0.0
