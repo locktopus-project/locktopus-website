@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Locktopus',
   tagline: 'Flexible and efficient locks',
-  url: 'https://locktopus.xyz',
+  url: 'https://locktopus.tech',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -77,7 +77,7 @@ const config = {
             label: 'Docs',
           },
           {
-            href: 'https://playground.locktopus.xyz',
+            href: 'https://playground.locktopus.tech',
             label: 'Playground',
             position: 'right',
           },
@@ -103,7 +103,7 @@ const config = {
                 label: 'Github'
               },
               {
-                href: 'https://playground.locktopus.xyz',
+                href: 'https://playground.locktopus.tech',
                 label: 'Locktopus Playground'
               },
               {

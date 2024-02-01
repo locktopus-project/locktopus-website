@@ -1,3 +1,3 @@
 # Website
 
-This repo contains the code for [locktopus.xyz](https://locktopus.xyz)
+This repo contains the code for [locktopus.tech](https://locktopus.tech)

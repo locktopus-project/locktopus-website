@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Playground
 
-Locktopus has [Playground](https://playground.locktopus.xyz/) for playing with locks.
+Locktopus has [Playground](https://playground.locktopus.tech/) for playing with locks.
 
 Using it requires connecting to an instance of Locktopus.
 
