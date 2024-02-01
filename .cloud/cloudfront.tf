@@ -100,7 +100,7 @@ data "aws_iam_policy_document" "cloudfront_invalidation" {
 
 # Edge functions for appending index.html to folder paths
 resource "aws_cloudfront_function" "append_index_html" {
-  name    = "append_index_html"
+  name    = "append_index_html_for_${replace(var.DOMAIN_NAME, ".", "-")}"
   runtime = "cloudfront-js-1.0"
 
   code = file("${path.module}/append_index_html.js")
